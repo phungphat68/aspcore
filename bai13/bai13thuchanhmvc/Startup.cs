@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -14,13 +14,14 @@ namespace bai13thuchanhmvc
 {
     public class Startup
     {
-       
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc( =option> option.EnableEndpointRouting = false);
             services.AddMvc(option => option.EnableEndpointRouting = false);
-            services.AddOptions();
+            //services.AddOptions();
+            //services.AddMvc();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,36 +31,58 @@ namespace bai13thuchanhmvc
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //app.UseMvcWithDefaultRoute();
             app.UseRouting();
-            app.UseEndpoints(Endpoint =>
+            app.UseMvcWithDefaultRoute();
+            app.UseEndpoints(TenTuDat =>
             {
-                Endpoint.MapControllerRoute("secure", "{controller=Admin}/{action=Index}/{id?}");
-                Endpoint.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                
-
-               
+                TenTuDat.MapControllerRoute("DEFAULT", "{CONTROLLER=HOME}/{ACTION=INDEX}/{id?}");
             });
+            
 
-            //APP.USEMVC(ROUTES =>
+            //app.UseRouting();
+            //app.UseEndpoints(Endpoint =>
             //{
+            //    Endpoint.MapControllerRoute("secure", "secure", new
+            //    {
+            //        controller = "Admin",
+            //        action = "Index"
+            //    });
 
-            //    ROUTES.MAPROUTE(NAME: "DEFAULT", TEMPLATE: "{CONTROLLER}/{ACTION}/{ID?}");
-            //}
-            //        );
+            //    app.UseEndpoints(Endpoint =>
+            //    {
+            //        Endpoint.MapControllerRoute("abcd", "huhuh", new
+            //        {
+            //            controller = "Home",
+            //            action = "Index"
+            //        });
+            //    });
 
-            // Tai da sua
-            //app.UseMvc(ROUTES =>
-            //{
-            //    ROUTES.MapRoute(name: "DEFAULT", template: "{CONTROLLER=HOME}/{ACTION=INDEX}/{ID?}");
-            //});
+            //    //Mặc định khi start app sẽ chạy vào chỗ này
+            //    app.UseEndpoints(Endpoint =>
+            //    {
+            //        Endpoint.MapControllerRoute("default", "{controller=Home}/{action=Index}/{Id?}");
+            //    });
+
+            //    //APP.USEMVC(ROUTES =>
+            //    //{
+
+            //    //    ROUTES.MAPROUTE(NAME: "DEFAULT", TEMPLATE: "{CONTROLLER}/{ACTION}/{ID?}");
+            //    //}
+            //    //);
+
+            //    //Tai da sua
+            //    app.UseMvc(ROUTES =>
+            //    {
+            //        ROUTES.MapRoute(name: "DEFAULT", template: "{CONTROLLER=HOME}/{ACTION=INDEX}/{ID?}");
+            //    });
 
             app.Run(handler: async (CONTEXT) =>
             {
                 await CONTEXT.Response.WriteAsync(text: " KHONG TIM THAY ROUTE");
             });
-
-
-
+       
         }
     }
 }

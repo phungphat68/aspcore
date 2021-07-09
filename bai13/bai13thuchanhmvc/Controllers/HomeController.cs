@@ -10,6 +10,7 @@ namespace bai13thuchanhmvc.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("Home")]
         public IActionResult Index(int id)
         {
             var model = new IndexModel();
