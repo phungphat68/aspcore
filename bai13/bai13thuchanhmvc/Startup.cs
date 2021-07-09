@@ -19,7 +19,8 @@ namespace bai13thuchanhmvc
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddMvc( =option> option.EnableEndpointRouting = false);
-            services.AddMvc();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddOptions();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,23 +30,35 @@ namespace bai13thuchanhmvc
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(Endpoint =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{Id?}");
+                Endpoint.MapControllerRoute("secure", "{controller=Admin}/{action=Index}/{id?}");
+                Endpoint.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                
+
+               
             });
 
-            // Tai da sua
-            //app.Run(handler: async (context) =>
+            //APP.USEMVC(ROUTES =>
             //{
-            //    await context.Response.WriteAsync(text:" xin chao hello");
+
+            //    ROUTES.MAPROUTE(NAME: "DEFAULT", TEMPLATE: "{CONTROLLER}/{ACTION}/{ID?}");
+            //}
+            //        );
+
+            // Tai da sua
+            //app.UseMvc(ROUTES =>
+            //{
+            //    ROUTES.MapRoute(name: "DEFAULT", template: "{CONTROLLER=HOME}/{ACTION=INDEX}/{ID?}");
             //});
 
-            //app.UseMvc(routes =>
-            //    {
-            //        routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-            //    });
+            app.Run(handler: async (CONTEXT) =>
+            {
+                await CONTEXT.Response.WriteAsync(text: " KHONG TIM THAY ROUTE");
+            });
+
+
 
         }
     }

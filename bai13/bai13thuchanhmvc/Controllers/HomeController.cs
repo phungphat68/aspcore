@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using bai13thuchanhmvc.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,11 @@ namespace bai13thuchanhmvc.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index(int id)
         {
-            return "Hello from Home controller";
+            var model = new IndexModel();
+            model.Message = "Hello from model, có id là" +id;
+            return View(model);
         }
     }
 }
