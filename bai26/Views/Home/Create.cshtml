@@ -1,0 +1,43 @@
+﻿@model bai26.Models.ProductEditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <form asp-action="Create" asp-controller="Home" method="post">
+        <div asp-validation-summary="ModelOnly">
+            <span>Please correct the following error</span>
+        </div>
+
+        <label asp-for="Name">Tên</label>
+        <input type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+
+        <label asp-for="Rate">Tỷ lệ đặt hàng</label>
+        <input type="text" asp-for="Rate" />
+
+        <label asp-for="Rating">Độ ngon</label>
+        <input type="text" asp-for="Rating" asp-format="{0:N2}"/>
+
+      
+        <input type="submit" name="submit" />
+    </form>
+</body>
+</html>

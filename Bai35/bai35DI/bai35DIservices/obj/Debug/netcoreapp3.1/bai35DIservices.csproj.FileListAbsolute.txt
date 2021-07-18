@@ -1,0 +1,9 @@
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.csproj.AssemblyReference.cache
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.AssemblyInfoInputs.cache
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.AssemblyInfo.cs
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.csproj.CoreCompileInputs.cache
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\bin\Debug\netcoreapp3.1\bai35DIservices.deps.json
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\bin\Debug\netcoreapp3.1\bai35DIservices.dll
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\bin\Debug\netcoreapp3.1\bai35DIservices.pdb
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.dll
+D:\d_Website\aspcore\Bai35\bai35DI\bai35DIservices\obj\Debug\netcoreapp3.1\bai35DIservices.pdb

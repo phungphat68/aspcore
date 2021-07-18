@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>index2</h1>
+    <environment names="Development">
+        <h1>This only renders in the Development Environment</h1>
+    </environment>
+
+    <environment names="Production">
+        <h1>This renders in the Production Environments</h1>
+    </environment>
+
+    <a href="/Home/Create">Create</a>
+
+    <a href="/Home/Edit">Edit</a>
+
+</body>
+</html>

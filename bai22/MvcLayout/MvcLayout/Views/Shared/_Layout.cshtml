@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Layout Index</title>
+    @RenderSection(name:"header", required:false)
+</head>
+<body>
+
+    <div id="header">
+        <h1>This is header </h1>
+    </div>
+
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="Footer">
+        @RenderSection(name:"footer", required:false)
+        <p>This is Footer</p>
+    </div>
+
+</body>
+</html>
